@@ -1,0 +1,12 @@
+[programs.devnet]
+raffle = "HaV7gv3VGDKKDBiC1w7nKcfYUdJd5EF9ccct9Y9Zjzco"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+wallet = "/home/ubuntu/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
