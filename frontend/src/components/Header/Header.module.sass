@@ -1,0 +1,186 @@
+@import ../../styles/helper
+
+.header
+    width: 100%
+    background-color: #261645
+    background-size: cover
+    background-repeat: no-repeat
+    position: relative
+    z-index: 20
+    font-size: 1.5rem
+    line-height: 2rem
+    +m
+        border: none
+    +dark
+        border-color: $neutrals3
+
+.video
+    position: absolute
+    top: 0
+    left: 0
+
+.container
+    border-bottom-left-radius: 5vw
+    border-bottom-right-radius: 5vw
+    // height: 30vw
+    background-size: cover
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    max-width: 100%
+    padding: 1vw 5vw
+    margin: 0 auto
+    & > .button
+        margin-right: 12px
+        +m
+            display: none
+
+.logo
+    position: relative
+    z-index: 12
+    display: flex
+    flex-shrink: 0
+    width: 52px
+    margin-right: 32px
+    +d
+        margin-right: auto
+    img
+        width: 100%
+
+.separator
+    border-right: 2px solid $neutrals6
+    height: 24px
+    margin-left: 32px
+    padding-left: 24px
+    margin: auto
+
+.wrapper
+    display: flex
+    align-items: center
+    .button
+        display: none
+        +m
+            display: inline-flex
+            margin-top: 16px
+
+.nav
+    width: 100%
+    display: flex
+    margin-right: auto
+    align-items: center
+    .headerul
+        display: flex
+        .headerli
+            margin-right: 20px
+            margin-left: 20px
+
+.link
+    margin: auto
+    +dm-sans
+    line-height: 48px
+    color: $white
+    transition: color .2s
+    font-size: 19px
+    text-transform: uppercase
+    @media (max-width: 1200px)
+        font-size: 14px
+    +m
+        margin: 0
+        margin-left: 2rem
+        font-size: 12px
+        line-height: 32px
+    &::after
+        content: ''
+        display: block
+        width: 0
+        height: 2px
+        background: #fff
+        transition: width .3s
+    &:hover::after
+        width: 100%
+        transition: width .3s
+
+.search
+    position: relative
+    flex-shrink: 0
+    width: 256px
+    margin-right: 24px
+    +t
+        display: none
+    +m
+        display: block
+        width: 100%
+        margin: auto 0 0
+
+.input
+    width: 100%
+    height: 40px
+    padding: 0 42px 0 16px
+    background: none
+    border: 2px solid $neutrals6
+    border-radius: 8px
+    +poppins
+    +caption-2
+    transition: border-color .2s
+    +placeholder
+        color: $neutrals4
+    +dark
+        border-color: $neutrals3
+        color: $neutrals8
+    &:focus
+        border-color: $neutrals4
+
+.result
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    width: 42px
+    svg
+        fill: $neutrals4
+        transition: fill .2s
+    &:hover
+        svg
+            fill: $blue
+
+.notification
+    margin-right: 24px
+    +m
+        margin-right: 20px
+
+.burger
+    display: none
+    +m
+        display: block
+        position: relative
+        margin-left: 20px
+        width: 32px
+        height: 32px
+        background: none
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        &.active
+            &:before
+                transform: translateY(0) rotate(-45deg)
+            &:after
+                transform: translateY(0) rotate(45deg)
+        &:before,
+        &:after
+            content: ''
+            position: absolute
+            top: 16px
+            left: 6px
+            width: 40px
+            height: 2px
+            background: $neutrals4
+            border-radius: 2px
+            transition: transform .2s
+        &:before
+            transform: translateY(-4px)
+        &:after
+            transform: translateY(3px)
+
+@keyframes down
+    from
+        top: -100vw
+    to
+        top: 0

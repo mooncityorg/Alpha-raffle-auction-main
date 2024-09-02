@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "AgencyFB";
+    font-style: normal;
+    font-weight: 600;
+    src: url(../assets/fonts/AgencyFB-Bold.ttf) format("truetype");
+}
+
+$font-main: "AgencyFB", sans-serif;
+$font-second: "AgencyFB", sans-serif;
+$back-color: #1a1a1a;
+$primary-color: #c300ff;
+$button-color: #d73252;
+$card-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.5);
+* {
+    font-family: "AgencyFB", sans-serif !important;
+}

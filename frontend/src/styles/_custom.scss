@@ -1,0 +1,771 @@
+.raffled-card {
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-10px);
+        box-shadow: 0 4px 30px #00000056;
+    }
+}
+.buy-ticket-item {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    p {
+        font-size: 24px;
+        padding-left: 15px;
+    }
+    span {
+        font-size: 28px;
+        letter-spacing: 2px;
+        color: #87ff85;
+    }
+}
+.tickets-input {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    button {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #261645;
+        border-radius: 4px;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background-color: #261645;
+        &:hover {
+            border-color: #87ff85;
+            svg {
+                fill: #87ff85;
+            }
+        }
+    }
+    input {
+        width: calc(100% - 100px);
+        margin-right: 10px;
+        margin-left: 10px;
+        background: transparent;
+        border: 1px solid #000;
+        height: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 4px;
+        outline: none;
+        &:focus {
+            border-color: #87ff85;
+        }
+    }
+}
+
+.new-raffle {
+    position: relative;
+    z-index: 3;
+    min-height: 100vh;
+}
+.page-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto;
+}
+.no-ticket-alert {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.raffle-winner {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.font-roboto {
+    font-family: "AgencyFB", cooper-black-std, sans-serif;
+}
+
+.font-mulish {
+    font-family: "AgencyFB", cooper-black-std, sans-serif;
+}
+* {
+    font-family: "AgencyFB", cooper-black-std, sans-serif;
+}
+.container {
+    max-width: 1180px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (max-width: 1220px) {
+    .container {
+        max-width: calc(100% - 40px);
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
+.raffle-content {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 40px 20px;
+}
+.nft-card {
+    background-color: #261645;
+    border-radius: 10px;
+    width: calc(33.3% - 80px);
+}
+.nft-card img {
+    border-radius: 10px 10px 0 0;
+}
+.nft-card .card-content {
+    padding: 20px;
+}
+.nft-card .card-content p {
+    color: #eee;
+}
+.create-raffle {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #eee;
+    color: #eee;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 18px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: #d73252;
+    border-color: #d73252;
+}
+.create-raffle:hover {
+    background-color: #c72445;
+    border-color: #c72445;
+}
+.new-raffle-content {
+    padding-bottom: 320px;
+}
+.new-raffle-content .media {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #261645;
+}
+.new-raffle-content .media img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+}
+
+.nft-name {
+    font-size: 30px;
+    text-align: center;
+    padding: 16px 0;
+}
+.mint-address {
+    text-align: center;
+    padding: 0 0;
+    font-size: 14px;
+}
+.raffle-control {
+    width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background: #fff0;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 5px 4px 20px #0000001f;
+}
+.winner-show {
+    display: flex;
+    justify-content: space-between;
+}
+.form-item {
+    margin-bottom: 20px;
+}
+.Mui-focused fieldset {
+    border-color: #fff !important;
+}
+
+.Mui-focused .MuiInputLabel-root {
+    color: #fff !important;
+}
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+.form-control input {
+    padding: 15px 12px;
+    margin: 5px 0;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 2px solid #0000008f;
+    background: transparent;
+    outline: none;
+    &::placeholder {
+        color: #444;
+    }
+}
+.form-control input:focus {
+    border-color: #13dfad;
+}
+.form-control label.form-label {
+    margin-top: 0;
+}
+.input-helper {
+    font-size: 12px;
+}
+.Mui-checked {
+    color: #11e2ab !important;
+}
+.form-control-icon {
+    position: relative;
+}
+.form-control-icon span {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 10px;
+    color: #333;
+}
+
+.form-control-icon input {
+    width: calc(100% - 105px);
+    padding-right: 90px;
+}
+.form-control-icon input::placeholder {
+    color: #444;
+}
+.btn-create {
+    color: #fff;
+    background: #d73252;
+    padding: 12px 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: all 0.3s;
+    text-align: center;
+    border-color: #d73252;
+}
+.btn-create:disabled {
+    cursor: no-drop;
+    background-color: #000;
+}
+.btn-create:hover {
+    box-shadow: 6px 9px 20px #be2443;
+    background-color: #be2443;
+}
+
+.btn-create:disabled:hover {
+    box-shadow: none;
+}
+.raffle-page {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 360px;
+}
+.raffled-card {
+    width: calc(25% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background: #261645;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+.raffled-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 30px #00000087;
+}
+.raffled-card .media {
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+.raffled-card .media.closed img {
+    filter: grayscale(1);
+}
+.raffled-card .raffled-card-content {
+    padding: 15px;
+}
+
+.raffled-card .raffled-card-content .nft-name {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    padding: 0;
+}
+.card-tickets {
+    color: #fff;
+    text-align: center;
+    margin: 12px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-tickets.closed {
+    color: #aaa;
+}
+.join-raffle {
+    display: flex;
+}
+.btn-join {
+    background: #d73252;
+    border-color: #d73252;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s;
+}
+.btn-join:hover {
+    background: #10bd97;
+}
+.btn-join.closed {
+    background: #d73252;
+    border-color: #d73252;
+    text-align: center;
+}
+.btn-join.closed:hover {
+    background: #c02645;
+}
+.endtime-countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.endtime-countdown span {
+    color: #fff !important;
+    letter-spacing: 2px !important;
+    font-size: 16px !important;
+    margin-left: 10px !important;
+}
+.endtime-countdown p {
+    font-size: 16px;
+    margin-left: 5px;
+    color: #fff;
+}
+
+.endtime-countdown.closed span {
+    color: #aaa !important;
+}
+.endtime-countdown.closed p {
+    color: #aaa;
+}
+.raffle-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .raffle-detail-item {
+        text-align: center;
+        position: relative;
+        ul {
+            list-style: square;
+            border: 1px solid;
+            padding: 10px 40px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-top: 20px;
+            background: #261645;
+            border-radius: 8px;
+            box-shadow: 3px 3px 18px #0000005c;
+            li {
+                color: #fff;
+                font-size: 14px;
+                margin: 4px 0;
+            }
+        }
+    }
+}
+.raffle-detail .raffle-detail-item label {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    button {
+        border: none;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 4px;
+        &:hover {
+            cursor: pointer;
+            svg {
+                fill: #87ff85;
+            }
+        }
+    }
+}
+.raffle-detail .raffle-detail-item p {
+    font-size: 20px;
+}
+
+.page-loading {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(12px);
+    background: #000000b3;
+}
+.page-loading .loading-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 20px #0005;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul {
+    list-style: none;
+    li {
+        a {
+            text-decoration: none;
+        }
+    }
+}
+.new-create-content {
+    display: flex;
+    .nft-detail {
+        display: flex;
+        flex-direction: column;
+        margin-right: 30px;
+        justify-content: flex-start;
+        .media {
+            width: 320px;
+            img {
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
+    }
+    .new-raffle-control {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 5px 4px 20px #0000001f;
+        width: calc(100% - 360px);
+        background: linear-gradient(45deg, #7386dd, transparent);
+    }
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-half {
+    width: calc(50% - 20px);
+    margin-right: 10px;
+    margin-left: 10px;
+    @media (max-width: 576px) {
+        width: 100%;
+    }
+}
+
+.col-3 {
+    width: calc(25% - 20px);
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.col-4 {
+    width: calc(33.33% - 20px);
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.col-8 {
+    width: calc(66.66% - 20px);
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.col-9 {
+    width: calc(75% - 20px);
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.col-12 {
+    width: calc(100%);
+    margin-right: 0;
+    margin-left: 0;
+}
+.MuiOutlinedInput-notchedOutline {
+    border: 2px solid #333 !important;
+}
+.MuiSelect-select,
+.MuiInputLabel-root,
+.MuiMenuItem-root {
+    font-family: "AgencyFB", cooper-black-std, sans-serif !important;
+}
+.auction-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 300px;
+}
+.auction-card {
+    padding: 16px;
+    width: calc(33.33% - 68px);
+    margin-left: 18px;
+    margin-right: 18px;
+    box-shadow: 0px 4px 20px 5px #0000003d;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s;
+    margin-bottom: 40px;
+    color: #261645;
+    font-family: $font-main;
+    img {
+        width: 100%;
+        border-radius: 8px;
+    }
+    a {
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.3s;
+    }
+    .card-title {
+        font-family: $font-main;
+        font-weight: 300;
+        text-transform: capitalize;
+        font-size: 30px;
+        margin-bottom: 10px;
+        margin-top: 22px;
+        word-break: break-all;
+        @media (max-width: 992px) {
+            font-size: 32px;
+        }
+        @media (max-width: 762px) {
+            font-size: 26px;
+        }
+    }
+    p.card-winning-title {
+        font-size: 24px;
+        margin-top: 17px;
+        @media (max-width: 762px) {
+            font-size: 18px;
+        }
+    }
+    p.card-winning {
+        font-size: 18px;
+    }
+    .auction-endtime {
+        margin: 15px 0;
+        p.close-time {
+            font-weight: 400;
+            color: #3e3e3e;
+            font-weight: bold;
+        }
+    }
+    .close-countdown {
+        color: greenyellow;
+        font-size: 18px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .card-floor {
+        font-size: 20px;
+        span {
+            font-weight: bold;
+        }
+    }
+    img {
+        object-fit: cover;
+    }
+    button {
+        color: #000;
+        background-color: transparent;
+        width: 100%;
+        border-color: #000;
+        height: 50px;
+        border-radius: 8px;
+    }
+    @media (max-width: 992px) {
+        width: calc(50% - 96px);
+    }
+    @media (max-width: 762px) {
+        width: calc(50% - 48px);
+        margin-right: 8px;
+        margin-left: 8px;
+        padding: 16px;
+        margin-bottom: 20px;
+    }
+    @media (max-width: 576px) {
+        width: calc(100% - 48px);
+        margin-right: 8px;
+        margin-left: 8px;
+        padding: 16px;
+        margin-bottom: 20px;
+    }
+    .auction-card-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.create-content {
+    display: flex;
+    min-height: 100vh;
+    @media (max-width: 576px) {
+        flex-direction: column;
+        padding-bottom: 240px;
+    }
+    .nft-info {
+        width: 320px;
+        margin-right: 80px;
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .info-item {
+            font-family: $font-main;
+            padding: 15px 0;
+            @media (max-width: 576px) {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+            label {
+                font-size: 18px;
+                font-weight: 600;
+                @media (max-width: 992px) {
+                    font-size: 14px;
+                }
+            }
+            h2 {
+                font-size: 32px;
+                margin-top: 8px;
+                font-weight: 300;
+                @media (max-width: 992px) {
+                    font-size: 28px;
+                }
+            }
+            p {
+                font-size: 16px;
+                margin-top: 8px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            width: 280px;
+            margin-right: 40px;
+        }
+        @media (max-width: 992px) {
+            width: 260px;
+            margin-right: 20px;
+        }
+        @media (max-width: 576px) {
+            width: 100%;
+            margin-right: 0;
+            .media {
+                max-width: 280px;
+                margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .create-panel {
+        width: calc(100% - 400px);
+        padding: 30px;
+        button {
+            width: 100%;
+            color: #000;
+            border-color: #000;
+            height: 60px;
+            font-size: 20px;
+            background: #000;
+            color: #fff;
+            width: 100%;
+            border-radius: 8px;
+            &:hover {
+                background-color: #333;
+                border-color: #333;
+            }
+        }
+        @media (max-width: 1200px) {
+            width: calc(100% - 320px);
+            padding: 20px;
+        }
+        @media (max-width: 576px) {
+            width: calc(100% - 40px);
+            padding: 20px;
+        }
+    }
+}
+
+.auction-info-item {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    h2 {
+        font-size: 32px;
+        line-height: 36px;
+        font-family: $font-main;
+        @media (max-width: 992px) {
+            font-size: 28px;
+            line-height: 32px;
+        }
+    }
+    label {
+        font-size: 16px;
+        font-family: $font-main;
+        @media (max-width: 992px) {
+            font-size: 14px;
+        }
+    }
+    p {
+        font-size: 24px;
+        line-height: 1.5;
+        font-family: $font-main;
+        font-weight: 600;
+        span {
+            letter-spacing: 3px;
+            .copied {
+                font-size: 14px;
+                color: #fff;
+                position: absolute;
+                margin-top: 7px;
+                margin-left: 0px;
+            }
+        }
+        @media (max-width: 992px) {
+            font-size: 18px;
+        }
+    }
+    button {
+        width: 100%;
+    }
+}
+table.bidder-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+        th {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 20px;
+            border-bottom: 1px solid rgba(47, 82, 90, 0.5);
+            padding: 8px;
+            color: #2f525a;
+        }
+    }
+    tbody {
+        tr {
+            td {
+                padding: 8px;
+                border-bottom: 1px solid rgba(47, 82, 90, 0.5);
+            }
+        }
+    }
+}
