@@ -1,6 +1,15 @@
 # Raffle-program
 This is the raffle project that winners can receive the raffle NFT by buying tickets. You can buy tickets by $Sol and $NKL token.
 
+
+When users want to see the winners, call `revealWinner` function.
+
+`revealWinner(
+    userAddress: PublicKey,
+    nft_mint: PublicKey
+)`
+
+
 ## Install Dependencies
 - Install `node` and `yarn`
 - Install `ts-node` as global command
